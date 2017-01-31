@@ -140,10 +140,10 @@ public void abcdef(int lastAdded, ArrayList<HashSet> axisList, ChromosomeVRP son
                 } else if (r>0.66){
                     //Insertion Mutate (p,q,array)
                     
-                    moveElementOfArray(i,MyRandom.getSingleton().nextInt(this.getAlleles().length),this.getAlleles());
+                    this.setAlleles(moveElementOfArray(i,MyRandom.getSingleton().nextInt(this.getAlleles().length),this.getAlleles()));
                 } else {
                     //SWAP Mutate (p,q,array)
-                    swapElementsOfArray(i,MyRandom.getSingleton().nextInt(this.getAlleles().length),this.getAlleles());
+                    this.setAlleles(swapElementsOfArray(i,MyRandom.getSingleton().nextInt(this.getAlleles().length),this.getAlleles()));
                 }
             }             
         }         

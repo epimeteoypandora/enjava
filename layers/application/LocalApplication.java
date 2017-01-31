@@ -1,6 +1,7 @@
 package layers.application;
 
 
+import global.ImageStatic;
 import algorithm.AlgorithmAbstract;
 import algorithm.AlgorithmCVRP;
 import general.Individual;
@@ -45,7 +46,7 @@ public class LocalApplication {
     
     
     public LocalApplication(int[][] image) {
-        this.maxTime=500;
+        this.maxTime=999999999;
         this.startTime=0;
         this.finalTime=0;
         this.algorithm=null;
@@ -73,6 +74,9 @@ public class LocalApplication {
 //        }
 
         int[][] matrixCost =getDistanceMatrix(image);
+        ImageStatic.image=image;
+        ImageStatic.matrixCost=matrixCost;
+        
         JSON.stringify(matrixCost);
 
         ProblemImage problem = new ProblemImage();

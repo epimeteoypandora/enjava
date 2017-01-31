@@ -1,5 +1,6 @@
 package algorithm;
 
+import Chromosome.ChromosomeImage;
 import Chromosome.ChromosomeVRP;
 import general.Individual;
 import general.Population;
@@ -59,12 +60,13 @@ public class AlgorithmCVRP extends AlgorithmCVRPAbstract{
 //        initialize(popSize,chromLength);
         
        this.setPopulation(new Population());   
-        this.getPopulation().initialize(popSize, chromLength, ChromosomeVRP.class);           
+        this.getPopulation().initialize(popSize, chromLength, ChromosomeImage.class);           
         for (int i = 0; i < this.getPopulation().getSize(); i++){
             this.getPopulation().getIndividual(i).getChromosome().setAlleles(getOrderedRows(image,matrixCost));
             this.getProblem().evaluateStep(this.getPopulation().getIndividual(i));
         }
-        this.getPopulation().computeStats();           
+        this.getPopulation().computeStats();    
+        System.out.println("PRIMER MEJOR FITNESS = "+this.getPopulation().getBestIndividual().getFitness());
  	
     }
     public Individual run(){

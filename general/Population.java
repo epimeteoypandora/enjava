@@ -103,8 +103,8 @@ public class Population {
                 } 
 
 	if (this.bestf>antiguoFitness){
-            double newFitness=Math.floor(this.bestf * 100) / 100;
-            console.log(this.iteration+"-NUEVO FITNESS "+newFitness);   
+//            double newFitness=((int)this.bestf * 100) / 100;
+            console.log(this.iteration+"-NUEVO FITNESS "+this.bestf);   
             console.log(JSON.stringify(this.getIndividual(this.bestp)));         
 	}
 
